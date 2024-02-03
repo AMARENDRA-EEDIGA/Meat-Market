@@ -8,8 +8,534 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <title>Healthy Meat-Market</title>
     <link rel="icon" href="/logo.png">
-    <link rel="stylesheet" href="/stylesheet/style.css">
+    <!-- <link rel="stylesheet" href="/stylesheet/style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* nav-block */
+.nav {
+    width: 100%;
+    height: 80px;
+    background-color: forestgreen;
+    border-bottom: 2px solid #a81b1b;
+    border-top: 2px solid #a81b1b;
+    border-radius: 5px;
+    top: 0;
+    position: fixed;
+    z-index: 2;
+}
+/* nav-1st-div=logo */
+.logo {
+    /* margin-left: 50px; */
+    line-height: 70px;
+    padding: 0px 10px; 
+
+}
+
+a.active,
+.nav-items ul li a:hover {
+    background: rgb(187, 255, 210);
+    transition: .5s;
+}
+
+/* nav-2nd-div aitems */
+.nav-items{
+    margin-left: 80px;
+}
+
+nav ul {
+    list-style: none;
+    
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 70px;
+    margin:0 5px;
+
+}
+
+nav ul li a {
+    color: black;
+    font-size: 1.2em;
+    margin-left: 50px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-items ul li a:hover {
+    color: orange;
+}
+
+.nav-items ul li:hover {
+    transform: scale(1.1);
+
+}
+
+/* awavesom-font bars-block( It works when the screen decreases(max-width:1050) */
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    margin: auto;
+    line-height:70px;
+    margin-right:-15px;
+    cursor: pointer;
+    display: none;
+
+
+}
+.checkbtn i{
+    float: right;
+    font-size: 40px;
+}
+#check{
+    display: none;
+    position: relative;
+}
+/* Main-MEDIA QUERY FOR Awaveson-font bars */
+
+/* @media (max-width: 1070px) {
+    .logo{
+        padding-left: 50px;
+    }
+    #img_div{
+        display: none;
+    }
+    
+} */
+
+@media (min-width: 1021px) and (max-width:1440px) {
+    /* ========== LOGO RESPONSIVE ========= */
+    .nav>div:nth-child(1) {
+        transition: transform 2s, rotate;
+        animation: slide 3s 2;
+        z-index: 2;
+    }
+    
+    .nav>div:nth-child(1):hover {
+        transform: translate(150px, 150px) scale(4) rotate(720deg);
+    }
+    
+    /* lOGO animation section */
+    @keyframes slide {
+        100% {
+            transform: translate(150px, 150px) scale(5) rotate(720deg);
+    
+        }
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: none;
+    }
+    /* .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+
+    } */
+    .nav-items nav ul li {
+        display: block;
+    }
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: rgb(187, 255, 210);
+        color: orange;
+    }
+    #check:checked ~ .nav-items ul {
+        left: 0;
+    }
+
+
+}
+
+@media (min-width:20px) and (max-width:1020px) {
+    /* ========== LOGO RESPONSIVE ========= */
+    .logo {
+        transition: transform 2s, rotate !important;
+        animation: slide 3s 2 ;
+        z-index: 2 !important;
+    }
+    
+    .logo:hover {
+        transform: translate(50px, 50px) scale(2) rotate(720deg) !important;
+    }
+    
+    /* ==== lOGO animation section ====== */
+    @keyframes slide {
+        100% {
+            transform: translate(50px, 50px) scale(2) rotate(720deg) ;
+    
+        }
+    }
+
+    .logo{
+        padding-left: 15px;
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: block;
+        margin-right:-60px;
+    }
+    .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        /* font-size: 20px; */
+
+    }
+    .nav-items li a{
+        font-size: 15px;
+        text-align: center;
+    }
+    .nav-items nav ul li {
+        display: block;
+    }
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: none;
+        color: orange;
+    }
+    #check:checked ~ .nav-items ul {
+        left: 0;
+    }    
+    
+}
+
+
+/* =====It is the block of "Who we are section" ===== */
+.display-text{
+    display: none;
+    width: max-content;
+    background-color: darkgrey;
+}
+.who:hover{
+    .display-text{
+        /* border: 200px solid; */
+        position: absolute;
+        display: block;
+        background:darkgrey;
+    }
+    .display-text p{
+        padding-left: 30px;
+    }
+} 
+
+/* Logo image */
+.nav>div:nth-child(1) img {
+    border-radius: 5px;
+    /* z-index: 1; */
+}
+
+
+
+
+/* .search {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 160px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+} */
+
+/* .btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px none;
+    background-color: #692d2d;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 1s;
+} */
+
+/* .btn:hover {
+    background-color: #29e452;
+} */
+
+
+/*======== This is for Carousel block ==========*/
+#carouselExampleFade {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    /* overflow: hidden; */
+    border-radius: 10px;
+    margin-top: 90px;
+
+}
+
+.carousel-inner {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    margin: auto;
+    animation: rot 8s infinite;
+    border-radius: 50%;
+}
+
+/* ===== ANIMATION FOR THE .carousel=== */
+@keyframes rot {
+    50% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: #bbff00;
+    }
+
+    75% {
+        background-color: hwb(39 29% 7%);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: hsl(320, 100%, 59%);
+    }
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+
+
+/*===== GRID SECTION =========*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: transform 5s, box-shadow 2s;
+}
+.cards .card-body{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.cards img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cards:hover {
+    box-shadow: 10px 10px 10px gray;
+    /* border: solid; */
+}
+
+.cards:hover {
+    transform: scale(1.1);
+    /* border-radius: 30px; */
+}
+
+
+
+
+/*======= mEDIA Query of grid items for responsive ========*/
+@media all and (min-width:10px) and (max-width:425px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+        padding: 50px;
+    }
+    .main-grid .cards .card-img{
+        width: 230px;
+        height: 150px;
+        
+    }
+    .main-grid .cards .card-body{
+        width: 230px;
+        height: 120px;
+        /* background:#f5f2f0; */
+        color: rgb(64, 68, 54);
+        padding: 15px 10px 20px;
+        font-size: 10px;
+        /* row-gap: 100px; */
+    }
+}
+
+@media all and (min-width:426px) and (max-width:1024px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding: 50px;
+    }
+    .cards{
+        margin: auto;
+    }
+    .main-grid .cards .card-img{
+        width: 250px;
+        height: 200px;
+    }
+
+    .main-grid .cards .card-body{
+        width: 250px;
+        height: 170px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 20px 15px;
+    }
+
+}
+
+@media all and (min-width:1025px) and (max-width:1440px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        margin: 100px;
+        /* margin-left: 100px; */
+    }
+    .cards{
+        margin: auto;
+    }
+    .main-grid .cards .card-img{
+        width: 350px;
+        height: 250px;
+    }
+
+    .main-grid .cards .card-body{
+        width: 350px;
+        height: 170px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 20px 15px;
+    }
+
+
+}
+
+/* .footer>div {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    padding: 60px;
+
+} */
+
+.footer{
+    width: 100%;
+    height: auto;
+    background: rgba(202, 65, 65, 0.911);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 30px;
+}
+
+
+@media (min-width:10px) and (max-width: 450px) {
+    .footer{
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        background: rgba(202, 65, 65, 0.911);
+        padding: 30px;
+        display: flex;
+        flex-direction:column;
+        row-gap: 10px;
+    }
+
+    .copy-right{
+        font-size: 13px;
+    }
+    
+
+}
+
+/* #img_div {
+     width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+    border-radius: 80%;
+    position: relative;
+    margin: 50px auto;
+    animation: rot 5s infinite; 
+} */
+
+
+#img_div>div {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(23, 178, 250);
+    border-radius: 50%;
+    position: fixed;
+    animation: rot 2s infinite;
+}
+
+#img_div>div:nth-child(1) {
+    transform: translateY(150px);
+}
+
+#img_div>div:nth-child(2) {
+    transform: translateY(-150px);
+}
+
+#img_div>div:nth-child(3) {
+    transform: translate(130px, 80px);
+}
+
+#img_div>div:nth-child(4) {
+    transform: translate(-130px, 80px);
+}
+
+#img_div>div:nth-child(5) {
+    transform: translate(130px, -80px);
+}
+
+#img_div>div:nth-child(6) {
+    transform: translate(-130px, -80px);
+}
+
+img {
+    width: 60px;
+    height: 60px;
+}
+
+.flush-collapseOne {
+    display: none;
+}
+    </style>
 </head>
 
 <body>
