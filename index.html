@@ -7,10 +7,699 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <title>Healthy Meat-Market</title>
-    <link rel="icon" href="./stylesheet/logo.png">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="stylesheet/logo.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* nav-block */
+.nav {
+    width: 100%;
+    height: 80px;
+    background-color: forestgreen;
+    border-bottom: 2px solid #a81b1b;
+    border-top: 2px solid #a81b1b;
+    border-radius: 5px;
+    top: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+/* nav-1st-div=logo */
+.logo {
+    /* margin-left: 50px; */
+    line-height: 70px;
+    padding: 0px 12px;
+
+}
+
+a.active,
+.nav-items ul li a:hover {
+    background: rgb(39, 175, 85);
+    transition: .5s;
+}
+
+/* nav-2nd-div aitems */
+.nav-items {
+    position: relative;
+    margin-left: 80px;
+    /* margin-top: -80px; */
+}
+
+nav ul {
+    list-style: none;
+
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 70px;
+    margin: 0 5px;
+
+}
+
+nav ul li a {
+    color: black;
+    font-size: 1.3em;
+    margin-left: 50px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+} 
+
+.nav-items ul li a:hover {
+    color: orange;
+}
+
+.nav-items ul li:hover {
+    transform: scale(1.1);
+}
+
+/* awavesom-font bars-block( It works when the screen decreases(max-width:1050) */
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    margin: auto;
+    line-height: 70px;
+    margin-right: -15px;
+    cursor: pointer;
+    display: none;
+}
+
+.checkbtn i {
+    float: right;
+    font-size: 40px;
+}
+
+#check {
+    display: none;
+    position: relative;
+}
+
+/* ========    MEDIA QUERY FOR LARGE :-moz-full-screen  ========= */
+@media (min-width: 1025px) and (max-width:1800px) {
+
+    /* ========== LOGO RESPONSIVE ========= */
+    a.active,
+    .nav-items ul li a:hover {
+        background: rgb(187, 255, 210);
+        transition: .5s;
+    }
+
+    .nav>div:nth-child(1) {
+        transition: transform 2s, rotate;
+        animation: slide 3s 1;
+        z-index: 2;
+    }
+
+    .nav>div:nth-child(1):hover {
+        transform: translate(250px, 250px) scale(4) rotate(720deg);
+    }
+
+    /* lOGO animation section */
+    @keyframes slide {
+        100% {
+            transform: translate(250px, 250px) scale(5) rotate(720deg);
+
+        }
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: none;
+        margin-right: -60px;
+    }
+
+    /* .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        font-size: 20px;
+
+    } */
+    .nav-items {
+        position: relative;
+        margin-left: 80px;
+        /* margin-top: -80px; */
+    }
+
+    .nav-items li a {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .nav-items nav ul li {
+        display: block;
+    }
+
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: none;
+        color: orange;
+    }
+
+    #check:checked~.nav-items ul {
+        left: 0;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        margin: 100px;
+        /* margin-left: 100px; */
+    }
+
+    .cards {
+        margin: auto;
+    }
+
+    .main-grid .cards .card-img {
+        width: 350px;
+        height: 250px;
+    }
+
+    .main-grid .cards .card-body {
+        width: 350px;
+        height: 170px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 20px 15px;
+    }
+
+    .footer {
+        font-size: 20px;
+        width: 100%;
+        height: auto;
+        background: rgba(202, 65, 65, 0.911);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+
+    .copy-right {
+        font-size: 18px;
+    }
+}
+
+/* ========    MEDIA QUERY FOR LARGE :LAPTOP FULL-screen  ========= */
+@media (min-width: 769px) and (max-width:1024px) {
+
+    /* ========== LOGO RESPONSIVE ========= */
+    a.active,
+    .nav-items ul li a:hover {
+        background: rgb(187, 255, 210);
+        transition: .5s;
+    }
+    .nav>div:nth-child(1) {
+        transition: transform 2s, rotate;
+        animation: slide 3s 1;
+        z-index: 2;
+    }
+
+    .nav>div:nth-child(1):hover {
+        transform: translate(250px, 250px) scale(4) rotate(720deg);
+    }
+
+    /* lOGO animation section */
+    @keyframes slide {
+        100% {
+            transform: translate(250px, 250px) scale(5) rotate(720deg);
+
+        }
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: none;
+        margin-right: -60px;
+    }
+
+    /* .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        font-size: 20px;
+
+    } */
+    .nav-items {
+        position: relative;
+    }
+    .nav-items li a {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .nav-items nav ul li {
+        display: block;
+    }
+
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: none;
+        color: orange;
+    }
+
+    #check:checked~.nav-items ul {
+        left: 0;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+        margin: 100px;
+        /* margin-left: 100px; */
+    }
+
+    .cards {
+        margin: auto;
+    }
+
+    .main-grid .cards .card-img {
+        width: 350px;
+        height: 250px;
+    }
+
+    .main-grid .cards .card-body {
+        width: 350px;
+        height: 170px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 20px 15px;
+    }
+
+    .footer {
+        font-size: 22px;
+        width: 100%;
+        height: auto;
+        background: rgba(202, 65, 65, 0.911);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+
+    .copy-right {
+        font-size: 20px;
+    }
+}
+
+/* ========    MEDIA QUERY FOR LARGE :TABLET FULL-screen  ========= */
+@media (min-width: 426px) and (max-width:768px) {
+
+    /* ========== LOGO RESPONSIVE ========= */
+    .nav>div:nth-child(1) {
+        transition: transform 2s, rotate;
+        animation: slide 3s 1;
+        z-index: 2;
+    }
+
+    .nav>div:nth-child(1):hover {
+        transform: translate(250px, 250px) scale(4) rotate(720deg);
+    }
+
+    /* lOGO animation section */
+    @keyframes slide {
+        100% {
+            transform: translate(250px, 250px) scale(5) rotate(720deg);
+
+        }
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: block;
+        margin-right: -60px;
+    }
+
+    .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        /* font-size: 20px; */
+
+    }
+
+    .nav-items li a {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .nav-items nav ul li {
+        display: block;
+    }
+
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: none;
+        color: orange;
+    }
+
+    #check:checked~.nav-items ul {
+        left: 0;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding: 50px;
+    }
+
+    .cards {
+        margin: auto;
+
+    }
+
+    .main-grid .cards .card-img {
+        width: 250px;
+        height: 200px;
+    }
+
+    .main-grid .cards .card-body {
+        width: 250px;
+        height: 170px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 20px 15px;
+    }
+
+    .copy-right {
+        font-size: 13px;
+    }
+
+    .footer {
+        width: 100%;
+        height: auto;
+        background: rgba(202, 65, 65, 0.911);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+}
+
+/* ========    MEDIA QUERY FOR LARGE :MOBILE FULL-screen  ========= */
+@media (min-width:10px) and (max-width:425px) {
+
+    /* ========== LOGO RESPONSIVE ========= */
+    .nav>div:nth-child(1) {
+        transition: transform 2s, rotate !important;
+        animation: slide 3s 2;
+        z-index: 2 !important;
+    }
+
+    .nav>div:nth-child(1):hover {
+        transform: translate(50px, 50px) scale(2) rotate(720deg) !important;
+    }
+
+    /* ==== lOGO animation section ====== */
+    @keyframes slide {
+        100% {
+            transform: translate(50px, 50px) scale(2) rotate(720deg);
+
+        }
+    }
+
+    .logo {
+        padding-left: 15px;
+    }
+
+    /* ========== NAV ITEMS RESPONSIVE ========= */
+    .checkbtn {
+        display: block;
+        margin-right: -60px;
+    }
+
+    .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        /* font-size: 20px; */
+    }
+
+    .nav-items li a {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .nav-items nav ul li {
+        display: block;
+    }
+
+    .nav-items a:hover,
+    .nav-items a.active {
+        background: none;
+        color: orange;
+    }
+
+    #check:checked~.nav-items ul {
+        left: 0;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+        padding: 50px;
+    }
+
+    .main-grid .cards .card-img {
+        width: 230px;
+        height: 150px;
+
+    }
+
+    .main-grid .cards .card-body {
+        width: 230px;
+        height: 120px;
+        background: #f5f2f0;
+        color: rgb(64, 68, 54);
+        padding: 15px 10px 20px;
+        font-size: 10px;
+        /* row-gap: 100px; */
+    }
+
+    .footer {
+        font-size: 11px;
+        width: 100%;
+        height: 100%;
+        background: rgba(202, 65, 65, 0.911);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .copy-right {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ====== It is the block of "Who we are section" ===== */
+.display-text {
+    display: none;
+    width: max-content;
+    background-color: darkgrey;
+}
+
+.who:hover {
+    .display-text {
+        /* border: 200px solid; */
+        position: absolute;
+        display: block;
+        background: darkgrey;
+    }
+
+    .display-text p {
+        padding-left: 30px;
+    }
+}
+
+/* Logo image */
+.nav>div:nth-child(1) img {
+    border-radius: 5px;
+    position: relative;
+    /* z-index: 1; */
+}
+
+
+
+/*======== This is for Carousel block ==========*/
+#carouselExampleFade {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 90px;
+
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    animation: carousel-animi 8s infinite;
+    border-radius: 50%;
+}
+
+/* ===== ANIMATION FOR THE .carousel=== */
+@keyframes carousel-animi {
+    100% {
+        transform: rotate(360deg);
+    } 
+}
+
+.carousel img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*===== GRID SECTION =========*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: transform 5s, box-shadow 2s;
+}
+
+.cards .card-body {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.cards:hover {
+    box-shadow: 20px 20px 20px black;
+    transform: scale(1.1);
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+
+
+#img_div>div {
+    width: 20px;
+    height: 20px;
+    background: hsl(320, 100%, 59%);
+    border-radius: 50%;
+    position: absolute;
+    animation: rot 2s infinite;
+}
+
+
+@keyframes rot {
+    50% {
+        /* transform: rotate(760deg); */
+        background-color: red;
+    }
+
+    25% {
+
+        background-color: #bbff00;
+    }
+
+    75% {
+
+        background-color: hwb(39 29% 7%);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: hsl(320, 100%, 59%);
+    }
+}
+
+#img_div>div:nth-child(1) {
+    transform: translateY(150px);
+}
+
+#img_div>div:nth-child(2) {
+    transform: translateY(-150px);
+}
+
+#img_div>div:nth-child(3) {
+    transform: translate(130px, 80px);
+}
+
+#img_div>div:nth-child(4) {
+    transform: translate(-130px, 80px);
+}
+
+#img_div>div:nth-child(5) {
+    transform: translate(130px, -80px);
+}
+
+#img_div>div:nth-child(6) {
+    transform: translate(-130px, -80px);
+}
+
+img {
+    width: 70px;
+    height: 70px;
+}
+    </style>
 </head>
 
 <body>
