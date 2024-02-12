@@ -153,7 +153,7 @@ nav ul li a {
     transform: scale(1.1);
 }
  .logo {
-      padding:12px;
+      padding:10px;
       position:absolute;
   }
   .logo img{
@@ -168,7 +168,7 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
-    margin-bottom: 200px;
+    margin-bottom: 250px;
     margin-left: 30px;
 }
 
