@@ -161,8 +161,9 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
+     margin-top: 50px;
+    margin-left: 40px;
 }
-
 
 @keyframes rot {
     50% {
