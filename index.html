@@ -8,703 +8,14 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <title>Healthy Meat-Market</title>
     <link rel="icon" href="stylesheet/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        * {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252");
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* nav-block */
-.nav {
-    width: 100%;
-    height: 80px;
-    background-color: forestgreen;
-    border-bottom: 2px solid #a81b1b;
-    border-top: 2px solid #a81b1b;
-    border-radius: 5px;
-    top: 0;
-    position: fixed;
-    z-index: 2;
-}
-
-/* nav-1st-div=logo */
-.logo {
-    /* margin-left: 50px; */
-    line-height: 70px;
-    padding: 0px 12px;
-
-}
-
-a.active,
-.nav-items ul li a:hover {
-    background: rgb(39, 175, 85);
-    transition: .5s;
-}
-
-/* nav-2nd-div aitems */
-.nav-items {
-    position: relative;
-    margin-left: 80px;
-    /* margin-top: -80px; */
-}
-
-nav ul {
-    list-style: none;
-
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 70px;
-    margin: 0 5px;
-
-}
-
-nav ul li a {
-    color: black;
-    font-size: 1.3em;
-    margin-left: 50px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-} 
-
-.nav-items ul li a:hover {
-    color: orange;
-}
-
-.nav-items ul li:hover {
-    transform: scale(1.1);
-}
-
-/* awavesom-font bars-block( It works when the screen decreases(max-width:1050) */
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    margin: auto;
-    line-height: 70px;
-    margin-right: -15px;
-    cursor: pointer;
-    display: none;
-}
-
-.checkbtn i {
-    float: right;
-    font-size: 40px;
-}
-
-#check {
-    display: none;
-    position: relative;
-}
-
-/* ========    MEDIA QUERY FOR LARGE :-moz-full-screen  ========= */
-@media (min-width: 1025px) and (max-width:1800px) {
-
-    /* ========== LOGO RESPONSIVE ========= */
-    a.active,
-    .nav-items ul li a:hover {
-        background: rgb(187, 255, 210);
-        transition: .5s;
-    }
-
-    .nav>div:nth-child(1) {
-        transition: transform 2s, rotate;
-        animation: slide 3s 1;
-        z-index: 2;
-    }
-
-    .nav>div:nth-child(1):hover {
-        transform: translate(250px, 250px) scale(4) rotate(720deg);
-    }
-
-    /* lOGO animation section */
-    @keyframes slide {
-        100% {
-            transform: translate(250px, 250px) scale(5) rotate(720deg);
-
-        }
-    }
-
-    /* ========== NAV ITEMS RESPONSIVE ========= */
-    .checkbtn {
-        display: none;
-        margin-right: -60px;
-    }
-
-    /* .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        font-size: 20px;
-
-    } */
-    .nav-items {
-        position: relative;
-        margin-left: 80px;
-        /* margin-top: -80px; */
-    }
-
-    .nav-items li a {
-        font-size: 1.2em;
-        text-align: center;
-    }
-
-    .nav-items nav ul li {
-        display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
-    }
-
-    #check:checked~.nav-items ul {
-        left: 0;
-    }
-
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
-        margin: 100px;
-        /* margin-left: 100px; */
-    }
-
-    .cards {
-        margin: auto;
-    }
-
-    .main-grid .cards .card-img {
-        width: 350px;
-        height: 250px;
-    }
-
-    .main-grid .cards .card-body {
-        width: 350px;
-        height: 170px;
-        background: #f5f2f0;
-        color: rgb(64, 68, 54);
-        padding: 20px 15px;
-    }
-
-    .footer {
-        font-size: 20px;
-        width: 100%;
-        height: auto;
-        background: rgba(202, 65, 65, 0.911);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 30px;
-    }
-
-    .copy-right {
-        font-size: 18px;
-    }
-}
-
-/* ========    MEDIA QUERY FOR LARGE :LAPTOP FULL-screen  ========= */
-@media (min-width: 769px) and (max-width:1024px) {
-
-    /* ========== LOGO RESPONSIVE ========= */
-    a.active,
-    .nav-items ul li a:hover {
-        background: rgb(187, 255, 210);
-        transition: .5s;
-    }
-    .nav>div:nth-child(1) {
-        transition: transform 2s, rotate;
-        animation: slide 3s 1;
-        z-index: 2;
-    }
-
-    .nav>div:nth-child(1):hover {
-        transform: translate(250px, 250px) scale(4) rotate(720deg);
-    }
-
-    /* lOGO animation section */
-    @keyframes slide {
-        100% {
-            transform: translate(250px, 250px) scale(5) rotate(720deg);
-
-        }
-    }
-
-    /* ========== NAV ITEMS RESPONSIVE ========= */
-    .checkbtn {
-        display: none;
-        margin-right: -60px;
-    }
-
-    /* .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        font-size: 20px;
-
-    } */
-    .nav-items {
-        position: relative;
-    }
-    .nav-items li a {
-        font-size: 15px;
-        text-align: center;
-    }
-
-    .nav-items nav ul li {
-        display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
-    }
-
-    #check:checked~.nav-items ul {
-        left: 0;
-    }
-
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
-        margin: 100px;
-        /* margin-left: 100px; */
-    }
-
-    .cards {
-        margin: auto;
-    }
-
-    .main-grid .cards .card-img {
-        width: 350px;
-        height: 250px;
-    }
-
-    .main-grid .cards .card-body {
-        width: 350px;
-        height: 170px;
-        background: #f5f2f0;
-        color: rgb(64, 68, 54);
-        padding: 20px 15px;
-    }
-
-    .footer {
-        font-size: 22px;
-        width: 100%;
-        height: auto;
-        background: rgba(202, 65, 65, 0.911);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 30px;
-    }
-
-    .copy-right {
-        font-size: 20px;
-    }
-}
-
-/* ========    MEDIA QUERY FOR LARGE :TABLET FULL-screen  ========= */
-@media (min-width: 426px) and (max-width:768px) {
-
-    /* ========== LOGO RESPONSIVE ========= */
-    .nav>div:nth-child(1) {
-        transition: transform 2s, rotate;
-        animation: slide 3s 1;
-        z-index: 2;
-    }
-
-    .nav>div:nth-child(1):hover {
-        transform: translate(250px, 250px) scale(4) rotate(720deg);
-    }
-
-    /* lOGO animation section */
-    @keyframes slide {
-        100% {
-            transform: translate(250px, 250px) scale(5) rotate(720deg);
-
-        }
-    }
-
-    /* ========== NAV ITEMS RESPONSIVE ========= */
-    .checkbtn {
-        display: block;
-        margin-right: -60px;
-    }
-
-    .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        /* font-size: 20px; */
-
-    }
-
-    .nav-items li a {
-        font-size: 15px;
-        text-align: center;
-    }
-
-    .nav-items nav ul li {
-        display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
-    }
-
-    #check:checked~.nav-items ul {
-        left: 0;
-    }
-
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        padding: 50px;
-    }
-
-    .cards {
-        margin: auto;
-
-    }
-
-    .main-grid .cards .card-img {
-        width: 250px;
-        height: 200px;
-    }
-
-    .main-grid .cards .card-body {
-        width: 250px;
-        height: 170px;
-        background: #f5f2f0;
-        color: rgb(64, 68, 54);
-        padding: 20px 15px;
-    }
-
-    .copy-right {
-        font-size: 13px;
-    }
-
-    .footer {
-        width: 100%;
-        height: auto;
-        background: rgba(202, 65, 65, 0.911);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 30px;
-    }
-}
-
-/* ========    MEDIA QUERY FOR LARGE :MOBILE FULL-screen  ========= */
-@media (min-width:10px) and (max-width:425px) {
-
-    /* ========== LOGO RESPONSIVE ========= */
-    .nav>div:nth-child(1) {
-        transition: transform 2s, rotate !important;
-        animation: slide 3s 2;
-        z-index: 2 !important;
-    }
-
-    .nav>div:nth-child(1):hover {
-        transform: translate(50px, 50px) scale(2) rotate(720deg) !important;
-    }
-
-    /* ==== lOGO animation section ====== */
-    @keyframes slide {
-        100% {
-            transform: translate(50px, 50px) scale(2) rotate(720deg);
-
-        }
-    }
-
-    .logo {
-        padding-left: 15px;
-    }
-
-    /* ========== NAV ITEMS RESPONSIVE ========= */
-    .checkbtn {
-        display: block;
-        margin-right: -60px;
-    }
-
-    .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        /* font-size: 20px; */
-    }
-
-    .nav-items li a {
-        font-size: 15px;
-        text-align: center;
-    }
-
-    .nav-items nav ul li {
-        display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
-    }
-
-    #check:checked~.nav-items ul {
-        left: 0;
-    }
-
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
-        padding: 50px;
-    }
-
-    .main-grid .cards .card-img {
-        width: 230px;
-        height: 150px;
-
-    }
-
-    .main-grid .cards .card-body {
-        width: 230px;
-        height: 120px;
-        background: #f5f2f0;
-        color: rgb(64, 68, 54);
-        padding: 15px 10px 20px;
-        font-size: 10px;
-        /* row-gap: 100px; */
-    }
-
-    .footer {
-        font-size: 11px;
-        width: 100%;
-        height: 100%;
-        background: rgba(202, 65, 65, 0.911);
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-    }
-
-    .copy-right {
-        font-size: 13px;
-    }
-
-}
-
-
-/* ====== It is the block of "Who we are section" ===== */
-.display-text {
-    display: none;
-    width: max-content;
-    background-color: darkgrey;
-}
-
-.who:hover {
-    .display-text {
-        /* border: 200px solid; */
-        position: absolute;
-        display: block;
-        background: darkgrey;
-    }
-
-    .display-text p {
-        padding-left: 30px;
-    }
-}
-
-/* Logo image */
-.nav>div:nth-child(1) img {
-    border-radius: 5px;
-    position: relative;
-    /* z-index: 1; */
-}
-
-
-
-/*======== This is for Carousel block ==========*/
-#carouselExampleFade {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    overflow: hidden;
-    margin-top: 90px;
-
-}
-
-.carousel-inner {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    animation: carousel-animi 8s infinite;
-    border-radius: 50%;
-}
-
-/* ===== ANIMATION FOR THE .carousel=== */
-@keyframes carousel-animi {
-    100% {
-        transform: rotate(360deg);
-    } 
-}
-
-.carousel img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-/*===== GRID SECTION =========*/
-.cards {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    transition: transform 5s, box-shadow 2s;
-}
-
-.cards .card-body {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.cards img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-
-.cards:hover {
-    box-shadow: 20px 20px 20px black;
-    transform: scale(1.1);
-}
-
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
-
-
-
-#img_div>div {
-    width: 20px;
-    height: 20px;
-    background: hsl(320, 100%, 59%);
-    border-radius: 50%;
-    position: absolute;
-    animation: rot 2s infinite;
-}
-
-
-@keyframes rot {
-    50% {
-        /* transform: rotate(760deg); */
-        background-color: red;
-    }
-
-    25% {
-
-        background-color: #bbff00;
-    }
-
-    75% {
-
-        background-color: hwb(39 29% 7%);
-    }
-
-    100% {
-        transform: rotate(360deg);
-        background-color: hsl(320, 100%, 59%);
-    }
-}
-
-#img_div>div:nth-child(1) {
-    transform: translateY(150px);
-}
-
-#img_div>div:nth-child(2) {
-    transform: translateY(-150px);
-}
-
-#img_div>div:nth-child(3) {
-    transform: translate(130px, 80px);
-}
-
-#img_div>div:nth-child(4) {
-    transform: translate(-130px, 80px);
-}
-
-#img_div>div:nth-child(5) {
-    transform: translate(130px, -80px);
-}
-
-#img_div>div:nth-child(6) {
-    transform: translate(-130px, -80px);
-}
-
-img {
-    width: 70px;
-    height: 70px;
-}
-    </style>
 </head>
 
 <body>
     <nav class="nav">
-        <div class="logo"><img src="./stylesheet/logo.png" alt="logo"></div>
+        <div class="logo"><img src="./logo.png" alt="logo"></div>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
@@ -729,45 +40,17 @@ img {
             </ul>
         </div>
 
-
-
-        <!-- <div class="lable">
-            <div class="active"><a href="#">HOME</a></div>
-            <div class="who">
-                <div>
-                    <strong>WHO WE R?</strong>
-                    <section class="display-text">
-                        <p style="font-size: medium; color: black;">
-                            > We guide your journey and keep memories alive.
-                            <br>
-                            > We believe everyone deserves incredible adventures, <code style="color: red;">delicious food,</code> and lasting memories.<br>
-                            > Our passion for <strong>quality ensures</strong> you savor every moment.<br>
-                            > Get ready to explore, indulge, and create. <span style="color: green;">Start</span> your journey today!<br>
-                            </p>
-                    </section>
-                </div>
-                
-            </div>
-            
-            <div class="recipies"><strong>RECIPES</strong> </div>
-            <div class="touch"><strong><a href="#">GET IN TOUCH</a></strong></div>
-        </div> -->
-
-
-        <!-- <div class="search">
-            <div>
-                <input inp="text" placeholder="search">
-            </div>
-             <div>
-                <button class="btn">Search</button>
+        <!-- <div>
+            <input inp="text" placeholder="search">
+        </div>
+        <div>
+            <button class="btn">Search</button>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
-            viewBox="0 0 16 16">
-            <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-        </svg>
-        <i class="bi bi-search"></i>
-             </div>
-            
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+            <i class="bi bi-search"></i>
         </div> -->
 
         <!-- animation of Heart and Smiles -->
@@ -814,13 +97,6 @@ img {
                         d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398" />
                 </svg>
             </div>
-            <!-- <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-balloon-heart" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398" />
-                </svg>
-            </div> -->
 
         </div>
     </nav>
@@ -829,20 +105,16 @@ img {
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" style="width: 650px; height: 350px;">
-                <img src="./Grid-imgs/chicken-fry-recipe-for-beginners.webp"
-                    alt="Chicken Curry" class="d-block w-100">
+                <img src="../Grid-imgs/chicken-fry-recipe-for-beginners.webp" alt="Chicken Curry" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="./Grid-imgs/mutton curry.jpg"
-                    alt="Kerala Fish Curry" class="d-block w-100">
+                <img src="../Grid-imgs/mutton curry.JPG" alt="Kerala Fish Curry" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="./Grid-imgs/fish fry.jpg"
-                    alt="Chicken Curry" class="d-block w-100">
+                <img src="../Grid-imgs/fish fry.JPG" alt="Chicken Curry" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="./Grid-imgs/chicken_biryani.jpg"
-                    alt="Kerala Fish Curry" class="d-block w-100">
+                <img src="../Grid-imgs/chicken_biryani.JPG" alt="Kerala Fish Curry" class="d-block w-100">
             </div>
 
         </div>
@@ -868,7 +140,7 @@ img {
     <!-- Grid cArDs  -->
     <div class="main-grid">
         <div class="cards">
-            <div class="card-img"><img src="./Grid-imgs/chicken_biryani.jpg" alt="chicken_biryani"></div>
+            <div class="card-img"><img src="../Grid-imgs/chicken_biryani.jpg" alt="chicken_biryani"></div>
             <div class="card-body">
                 <p> <b>Chicken_Biryani</b></p>
                 <p>Village Healthy Recipes</p>
@@ -877,7 +149,8 @@ img {
         </div>
 
         <div class="cards">
-            <div class="card-img"> <img src="./Grid-imgs/chicken-fry-recipe-for-beginners.webp" alt="chicken_fry"></div>
+            <div class="card-img"> <img src="../Grid-imgs/chicken-fry-recipe-for-beginners.webp" alt="chicken_fry">
+            </div>
             <div class="card-body">
                 <p> <b>Chicken_Fry_Recipe</b></p>
                 <p>Village Healthy Recipes</p>
@@ -886,7 +159,7 @@ img {
         </div>
 
         <div class="cards">
-            <div class="card-img"><img src="./Grid-imgs/fish_curry.avif" alt="fish_curry"></div>
+            <div class="card-img"><img src="../Grid-imgs/fish_curry.avif" alt="fish_curry"></div>
             <div class="card-body">
                 <p> <b>Fish_Curry</b></p>
                 <p>Village Healthy Recipes</p>
@@ -894,7 +167,7 @@ img {
             </div>
         </div>
         <div class="cards">
-            <div class="card-img"><img src="./Grid-imgs/fish fry.jpg" alt="fish_fry"></div>
+            <div class="card-img"><img src="../Grid-imgs/fish fry.jpg" alt="fish_fry"></div>
             <div class="card-body">
                 <p> <b>Fish_fry</b></p>
                 <p>Village Healthy Recipes</p>
@@ -902,7 +175,7 @@ img {
             </div>
         </div>
         <div class="cards">
-            <div class="card-img"> <img src="./Grid-imgs/mutton_biryani.jpg" alt="Mutton-biryani"></div>
+            <div class="card-img"> <img src="../Grid-imgs/mutton_biryani.jpg" alt="Mutton-biryani"></div>
             <div class="card-body">
                 <p> <b>Mutton_Biryani</b></p>
                 <p>Village Healthy Recipes</p>
@@ -911,7 +184,7 @@ img {
 
         </div>
         <div class="cards">
-            <div class="card-img"> <img src="./Grid-imgs/mutton curry.jpg" alt="Mutton-curry"></div>
+            <div class="card-img"> <img src="../Grid-imgs/mutton curry.jpg" alt="Mutton-curry"></div>
             <div class="card-body">
                 <p> <b>Mutton_Curry</b></p>
                 <p>Village Healthy Recipes</p>
@@ -978,11 +251,6 @@ img {
     <!-- <br> -->
     <hr>
     <pre class="copy-right">©Amarendra 2024 Meat-Market All rights reserved.</pre>
-
-    <!-- <div>
-        <img src="https://www.cookwithnabeela.com/wp-content/uploads/2023/07/ChickenTIkka.webp" alt=""
-            style="width: 400px; height: 300px; border-radius: 10px; background-size: cover; background-position: center;">
-    </div> -->
 
 </footer>
 

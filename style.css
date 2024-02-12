@@ -1,6 +1,8 @@
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -131,20 +133,6 @@ nav ul li a {
         margin-right: -60px;
     }
 
-    /* .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        font-size: 20px;
-
-    } */
     .nav-items {
         position: relative;
         margin-left: 80px;
@@ -242,21 +230,6 @@ nav ul li a {
         display: none;
         margin-right: -60px;
     }
-
-    /* .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        font-size: 20px;
-
-    } */
     .nav-items {
         position: relative;
     }
