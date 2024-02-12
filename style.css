@@ -152,7 +152,14 @@ nav ul li a {
     box-shadow: 10px 10px 10px 10px black;
     transform: scale(1.1);
 }
-
+ .logo {
+      padding:12px;
+      position:absolute;
+  }
+  .logo img{
+      height: 60px;
+      width: 60px;
+  }
 
 #img_div>div {
     width: 20px;
@@ -161,8 +168,8 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
-    margin-bottom: 120px;
-/*     margin-left: 40px; */
+    margin-bottom: 200px;
+    margin-left: 30px;
 }
 
 @keyframes rot {
@@ -235,20 +242,14 @@ nav ul li a {
 
 /* ========    MEDIA QUERY FOR LARGE :-moz-full-screen  ========= */
 @media (min-width: 1025px) {
-
-    .logo {
-        line-height: 70px;
-        padding: 0px 12px;
-        position:absolute;
-    }
-.logo img{
-    height: 60px;
-    width: 60px;
-}
-
-    #img_div>div {
-        position: absolute;
-    }
+  .logo {
+      padding:12px;
+      position:absolute;
+  }
+  .logo img{
+      height: 60px;
+      width: 60px;
+  }
 
     /* ========== LOGO RESPONSIVE ========= */
     a.active{
