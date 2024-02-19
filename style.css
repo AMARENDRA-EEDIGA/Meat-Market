@@ -29,23 +29,22 @@ body {
 /* nav-1st-div=logo */
 .logo {
     /* margin-left: 50px; */
-    /* line-height: 70px; */
-    /* padding: 0px 12px; */
-    position: absolute;
-padding: 10px;
+    line-height: 70px;
+    padding: 0px 12px;
 
 }
-.logo img{
-    height: 60px;
-    width: 60px;
 
+a.active,
+.nav-items ul li a:hover {
+    background: rgb(39, 175, 85);
+    transition: .5s;
 }
 
 /* nav-2nd-div aitems */
 .nav-items {
-    /* This position should be relative for checkbox  */
     position: relative;
     margin-left: 80px;
+    /* margin-top: -80px; */
 }
 
 nav ul {
@@ -76,6 +75,163 @@ nav ul li a {
     transform: scale(1.1);
 }
 
+/* ====== It is the block of "Who we are section" ===== */
+.display-text {
+    display: none;
+    width: max-content;
+    background-color: darkgrey;
+}
+
+.who:hover {
+    .display-text {
+        /* border: 200px solid; */
+        position: absolute;
+        display: block;
+        background: darkgrey;
+    }
+
+    .display-text p {
+        padding-left: 30px;
+    }
+}
+
+/* Logo image */
+.nav>div:nth-child(1) img {
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+/*======== This is for Carousel block ==========*/
+#carouselExampleFade {
+    margin: auto;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    /* animation: carousel-animi 8s infinite; */
+    /* border-radius: 50%; */
+}
+
+/* ===== ANIMATION FOR THE .carousel=== */
+@keyframes carousel-animi {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.carousel img {
+    width: 100%;
+    height: 80%;
+    border-radius: 50%;
+    transition: transform 3s;
+}
+.carousel img:hover{
+    transform: scale(-1.2);
+}
+
+/*===== GRID SECTION =========*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: transform 2s;
+}
+
+.cards .card-body {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.cards:hover {
+    box-shadow: 10px 10px 10px 10px black;
+    transform: scale(1.1);
+}
+ .logo {
+      padding:10px;
+      position:absolute;
+  }
+  .logo img{
+      height: 60px;
+      width: 60px;
+  }
+
+#img_div>div {
+    width: 20px;
+    height: 20px;
+    background: hsl(320, 100%, 59%);
+    border-radius: 50%;
+    position: absolute;
+    animation: rot 2s infinite;
+    margin-bottom: 250px;
+    margin-left: 30px;
+}
+
+@keyframes rot {
+    50% {
+        /* transform: rotate(760deg); */
+        background-color: red;
+    }
+
+    25% {
+
+        background-color: #bbff00;
+    }
+
+    75% {
+
+        background-color: hwb(39 29% 7%);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: hsl(320, 100%, 59%);
+    }
+}
+
+#img_div>div:nth-child(1) {
+    transform: translateY(150px);
+}
+
+#img_div>div:nth-child(2) {
+    transform: translateY(-150px);
+}
+
+#img_div>div:nth-child(3) {
+    transform: translate(130px, 80px);
+}
+
+#img_div>div:nth-child(4) {
+    transform: translate(-130px, 80px);
+}
+
+#img_div>div:nth-child(5) {
+    transform: translate(130px, -80px);
+}
+
+#img_div>div:nth-child(6) {
+    transform: translate(-130px, -80px);
+}
+
+
 /* awavesom-font bars-block( It works when the screen decreases(max-width:1050) */
 .checkbtn {
     font-size: 30px;
@@ -98,14 +254,18 @@ nav ul li a {
 }
 
 /* ========    MEDIA QUERY FOR LARGE :-moz-full-screen  ========= */
-@media (min-width: 1025px) and (max-width:1800px) {
+@media (min-width: 1025px) {
+  .logo {
+      padding:12px;
+      position:absolute;
+  }
+  .logo img{
+      height: 60px;
+      width: 60px;
+  }
 
     /* ========== LOGO RESPONSIVE ========= */
-    a.active {
-        background: rgb(187, 255, 210);
-        transition: .5s;
-    }
-
+    a.active,
     .nav-items ul li a:hover {
         background: rgb(187, 255, 210);
         transition: .5s;
@@ -211,11 +371,7 @@ nav ul li a {
 @media (min-width: 769px) and (max-width:1024px) {
 
     /* ========== LOGO RESPONSIVE ========= */
-    a.active {
-        background: rgb(187, 255, 210);
-        transition: .5s;
-    }
-
+    a.active,
     .nav-items ul li a:hover {
         background: rgb(187, 255, 210);
         transition: .5s;
@@ -244,21 +400,6 @@ nav ul li a {
         display: none;
         margin-right: -60px;
     }
-
-    /* .nav-items ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-        font-size: 20px;
-
-    } */
     .nav-items {
         position: relative;
     }
@@ -270,12 +411,6 @@ nav ul li a {
 
     .nav-items nav ul li {
         display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
     }
 
     #check:checked~.nav-items ul {
@@ -570,35 +705,35 @@ nav ul li a {
 
 /*======== This is for Carousel block ==========*/
 #carouselExampleFade {
+    width: 80%;
+    height: 80%;
     margin: auto;
     overflow: hidden;
-    margin-top: 80px;
+    margin-top: 90px;
 
 }
 
 .carousel-inner {
     display: flex;
-    width: 80%;
-    height: 600px;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
     margin: auto;
-    /* animation: carousel-animi 8s infinite; */
-    /* border-radius: 50%; */
+    animation: carousel-animi 8s infinite;
+    border-radius: 50%;
 }
 
 /* ===== ANIMATION FOR THE .carousel=== */
 @keyframes carousel-animi {
     100% {
         transform: rotate(360deg);
-    }
+    } 
 }
-.carousel img {
+
+.carousel img{
     width: 100%;
-    height: 80%;
+    height: 100%;
     border-radius: 50%;
-    transition: transform 3s;
-}
-.carousel img:hover{
-    transform: scale(-1.2);
 }
 
 /*===== GRID SECTION =========*/
@@ -637,6 +772,7 @@ nav ul li a {
 }
 
 
+
 #img_div>div {
     width: 20px;
     height: 20px;
@@ -644,9 +780,6 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 120px;
 }
 
 
