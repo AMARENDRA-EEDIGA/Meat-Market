@@ -1,12 +1,11 @@
-
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252");
+    /* background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252"); */
+    background: whitesmoke;
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -30,45 +29,44 @@ body {
 /* nav-1st-div=logo */
 .logo {
     /* margin-left: 50px; */
-    line-height: 70px;
-    padding: 0px 12px;
+    /* line-height: 70px; */
+    /* padding: 0px 12px; */
+    position: absolute;
+padding: 10px;
 
 }
+.logo img{
+    height: 60px;
+    width: 60px;
 
-a.active,
-.nav-items ul li a:hover {
-    background: rgb(39, 175, 85);
-    transition: .5s;
 }
 
 /* nav-2nd-div aitems */
 .nav-items {
+    /* This position should be relative for checkbox  */
     position: relative;
     margin-left: 80px;
-    /* margin-top: -80px; */
 }
 
 nav ul {
     list-style: none;
-
 }
 
 nav ul li {
     display: inline-block;
     line-height: 70px;
     margin: 0 5px;
-
 }
 
 nav ul li a {
-    color: black;
+    color: white;
     font-size: 1.3em;
     margin-left: 50px;
     padding: 5px 20px;
     border-radius: 5px;
     text-transform: uppercase;
     text-decoration: none;
-} 
+}
 
 .nav-items ul li a:hover {
     color: orange;
@@ -103,7 +101,11 @@ nav ul li a {
 @media (min-width: 1025px) and (max-width:1800px) {
 
     /* ========== LOGO RESPONSIVE ========= */
-    a.active,
+    a.active {
+        background: rgb(187, 255, 210);
+        transition: .5s;
+    }
+
     .nav-items ul li a:hover {
         background: rgb(187, 255, 210);
         transition: .5s;
@@ -133,10 +135,23 @@ nav ul li a {
         margin-right: -60px;
     }
 
+    /* .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        font-size: 20px;
+
+    } */
     .nav-items {
-        position: relative;
+        position: absolute;
         margin-left: 80px;
-        /* margin-top: -80px; */
     }
 
     .nav-items li a {
@@ -146,12 +161,6 @@ nav ul li a {
 
     .nav-items nav ul li {
         display: block;
-    }
-
-    .nav-items a:hover,
-    .nav-items a.active {
-        background: none;
-        color: orange;
     }
 
     #check:checked~.nav-items ul {
@@ -178,7 +187,7 @@ nav ul li a {
     .main-grid .cards .card-body {
         width: 350px;
         height: 170px;
-        background: #f5f2f0;
+        background: orange;
         color: rgb(64, 68, 54);
         padding: 20px 15px;
     }
@@ -187,7 +196,7 @@ nav ul li a {
         font-size: 20px;
         width: 100%;
         height: auto;
-        background: rgba(202, 65, 65, 0.911);
+        background:green;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding: 30px;
@@ -202,11 +211,16 @@ nav ul li a {
 @media (min-width: 769px) and (max-width:1024px) {
 
     /* ========== LOGO RESPONSIVE ========= */
-    a.active,
+    a.active {
+        background: rgb(187, 255, 210);
+        transition: .5s;
+    }
+
     .nav-items ul li a:hover {
         background: rgb(187, 255, 210);
         transition: .5s;
     }
+
     .nav>div:nth-child(1) {
         transition: transform 2s, rotate;
         animation: slide 3s 1;
@@ -230,9 +244,25 @@ nav ul li a {
         display: none;
         margin-right: -60px;
     }
+
+    /* .nav-items ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        font-size: 20px;
+
+    } */
     .nav-items {
         position: relative;
     }
+
     .nav-items li a {
         font-size: 15px;
         text-align: center;
@@ -336,12 +366,18 @@ nav ul li a {
     }
 
     .nav-items li a {
-        font-size: 15px;
+        color: white;
+        font-size: 25px;
         text-align: center;
     }
 
     .nav-items nav ul li {
         display: block;
+    }
+
+    a.active {
+        background: rgb(187, 255, 210);
+        transition: .5s;
     }
 
     .nav-items a:hover,
@@ -416,7 +452,11 @@ nav ul li a {
     }
 
     .logo {
+        /* margin-left: 50px; */
+        line-height: 70px;
         padding-left: 15px;
+        position: absolute;
+    
     }
 
     /* ========== NAV ITEMS RESPONSIVE ========= */
@@ -530,35 +570,35 @@ nav ul li a {
 
 /*======== This is for Carousel block ==========*/
 #carouselExampleFade {
-    width: 80%;
-    height: 80%;
     margin: auto;
     overflow: hidden;
-    margin-top: 90px;
+    margin-top: 80px;
 
 }
 
 .carousel-inner {
     display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 600px;
     margin: auto;
-    animation: carousel-animi 8s infinite;
-    border-radius: 50%;
+    /* animation: carousel-animi 8s infinite; */
+    /* border-radius: 50%; */
 }
 
 /* ===== ANIMATION FOR THE .carousel=== */
 @keyframes carousel-animi {
     100% {
         transform: rotate(360deg);
-    } 
+    }
 }
-
-.carousel img{
+.carousel img {
     width: 100%;
-    height: 100%;
+    height: 80%;
     border-radius: 50%;
+    transition: transform 3s;
+}
+.carousel img:hover{
+    transform: scale(-1.2);
 }
 
 /*===== GRID SECTION =========*/
@@ -597,7 +637,6 @@ nav ul li a {
 }
 
 
-
 #img_div>div {
     width: 20px;
     height: 20px;
@@ -605,6 +644,9 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 120px;
 }
 
 
