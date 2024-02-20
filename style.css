@@ -1,11 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-image: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8663.jpg?w=740&t=st=1705938957~exp=1705939557~hmac=457c1a7a61e51cd53a7ca54978af37ce4be11a789be88f70652859266634d252");
-    /* background: whitesmoke; */
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -30,9 +30,11 @@ body {
 .logo {
     /* margin-left: 50px; */
     line-height: 70px;
-    padding: 0px 12px;
+    padding: 10px;
+    position: absolute;
 
 }
+
 
 a.active,
 .nav-items ul li a:hover {
@@ -98,6 +100,100 @@ nav ul li a {
 /* Logo image */
 .nav>div:nth-child(1) img {
     border-radius: 5px;
+    position: relative;
+    /* z-index: 1; */
+}
+
+
+
+/*======== This is for Carousel block ==========*/
+#carouselExample {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 120px;
+
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    /* animation: carousel-animi 8s infinite;
+    border-radius: 50%; */
+}
+
+/* ===== ANIMATION FOR THE .carousel=== */
+/* @keyframes carousel-animi {
+    100% {
+        transform: rotate(360deg);
+    } 
+} */
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*===== GRID SECTION =========*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: transform 5s, box-shadow 2s;
+}
+
+.cards .card-body {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.cards:hover {
+    box-shadow: 20px 20px 20px black;
+    transform: scale(1.1);
+}
+
+
+
+
+/* ====== It is the block of "Who we are section" ===== */
+.display-text {
+    display: none;
+    width: max-content;
+    background-color: darkgrey;
+}
+
+.who:hover {
+    .display-text {
+        /* border: 200px solid; */
+        position: absolute;
+        display: block;
+        background: darkgrey;
+    }
+
+    .display-text p {
+        padding-left: 30px;
+    }
+}
+
+/* Logo image */
+.nav>div:nth-child(1) img {
+    border-radius: 5px;
     position: absolute;
     z-index: 1;
 }
@@ -121,11 +217,11 @@ nav ul li a {
 }
 
 /* ===== ANIMATION FOR THE .carousel=== */
-@keyframes carousel-animi {
+/* @keyframes carousel-animi {
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 .carousel img {
     width: 100%;
@@ -133,46 +229,15 @@ nav ul li a {
     border-radius: 50%;
     transition: transform 3s;
 }
-.carousel img:hover{
+
+.carousel img:hover {
     transform: scale(-1.2);
 }
 
-/*===== GRID SECTION =========*/
-.cards {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    transition: transform 2s;
+#img_div{
+    margin-top: 30px;
+    margin-left: 30px;
 }
-
-.cards .card-body {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.cards img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-
-.cards:hover {
-    box-shadow: 10px 10px 10px 10px black;
-    transform: scale(1.1);
-}
- .logo {
-      padding:10px;
-      position:absolute;
-  }
-  .logo img{
-      height: 60px;
-      width: 60px;
-  }
 
 #img_div>div {
     width: 20px;
@@ -181,8 +246,6 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     animation: rot 2s infinite;
-    margin-bottom: 250px;
-    margin-left: 30px;
 }
 
 @keyframes rot {
@@ -255,14 +318,16 @@ nav ul li a {
 
 /* ========    MEDIA QUERY FOR LARGE :-moz-full-screen  ========= */
 @media (min-width: 1025px) {
-  .logo {
-      padding:12px;
-      position:absolute;
-  }
-  .logo img{
-      height: 60px;
-      width: 60px;
-  }
+    .logo {
+        padding: 12px;
+        position: absolute;
+        padding: 8px;
+    }
+
+    .logo img {
+        height: 60px;
+        width: 60px;
+    }
 
     /* ========== LOGO RESPONSIVE ========= */
     a.active,
@@ -356,7 +421,7 @@ nav ul li a {
         font-size: 20px;
         width: 100%;
         height: auto;
-        background:green;
+        background: green;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding: 30px;
@@ -400,6 +465,7 @@ nav ul li a {
         display: none;
         margin-right: -60px;
     }
+
     .nav-items {
         position: relative;
     }
@@ -591,7 +657,7 @@ nav ul li a {
         line-height: 70px;
         padding-left: 15px;
         position: absolute;
-    
+
     }
 
     /* ========== NAV ITEMS RESPONSIVE ========= */
@@ -671,165 +737,4 @@ nav ul li a {
         font-size: 13px;
     }
 
-}
-
-
-/* ====== It is the block of "Who we are section" ===== */
-.display-text {
-    display: none;
-    width: max-content;
-    background-color: darkgrey;
-}
-
-.who:hover {
-    .display-text {
-        /* border: 200px solid; */
-        position: absolute;
-        display: block;
-        background: darkgrey;
-    }
-
-    .display-text p {
-        padding-left: 30px;
-    }
-}
-
-/* Logo image */
-.nav>div:nth-child(1) img {
-    border-radius: 5px;
-    position: relative;
-    /* z-index: 1; */
-}
-
-
-
-/*======== This is for Carousel block ==========*/
-#carouselExampleFade {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    overflow: hidden;
-    margin-top: 90px;
-
-}
-
-.carousel-inner {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    animation: carousel-animi 8s infinite;
-    border-radius: 50%;
-}
-
-/* ===== ANIMATION FOR THE .carousel=== */
-@keyframes carousel-animi {
-    100% {
-        transform: rotate(360deg);
-    } 
-}
-
-.carousel img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-/*===== GRID SECTION =========*/
-.cards {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    transition: transform 5s, box-shadow 2s;
-}
-
-.cards .card-body {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.cards img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-
-.cards:hover {
-    box-shadow: 20px 20px 20px black;
-    transform: scale(1.1);
-}
-
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
-
-
-
-#img_div>div {
-    width: 20px;
-    height: 20px;
-    background: hsl(320, 100%, 59%);
-    border-radius: 50%;
-    position: absolute;
-    animation: rot 2s infinite;
-}
-
-
-@keyframes rot {
-    50% {
-        /* transform: rotate(760deg); */
-        background-color: red;
-    }
-
-    25% {
-
-        background-color: #bbff00;
-    }
-
-    75% {
-
-        background-color: hwb(39 29% 7%);
-    }
-
-    100% {
-        transform: rotate(360deg);
-        background-color: hsl(320, 100%, 59%);
-    }
-}
-
-#img_div>div:nth-child(1) {
-    transform: translateY(150px);
-}
-
-#img_div>div:nth-child(2) {
-    transform: translateY(-150px);
-}
-
-#img_div>div:nth-child(3) {
-    transform: translate(130px, 80px);
-}
-
-#img_div>div:nth-child(4) {
-    transform: translate(-130px, 80px);
-}
-
-#img_div>div:nth-child(5) {
-    transform: translate(130px, -80px);
-}
-
-#img_div>div:nth-child(6) {
-    transform: translate(-130px, -80px);
-}
-
-img {
-    width: 70px;
-    height: 70px;
 }
